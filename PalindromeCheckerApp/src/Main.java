@@ -6,6 +6,7 @@ class Uc1 {
         System.out.println("System initialized successfully");
     }
 }
+
 public class PalindromeCheckerApp3 {
     public static void main(String[] args) {
         Uc1 ob1 = new Uc1();
