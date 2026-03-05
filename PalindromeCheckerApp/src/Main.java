@@ -1,14 +1,42 @@
 import java.util.Scanner;
-class Uc1 {
-    public void show() {
-        System.out.println("Welcome to palindrome checker app");
-        System.out.println("Version 1.0");
-        System.out.println("System initialized successfully");
+
+class Uc3 {
+    String beforerev;
+
+
+    public void reverse() {
+
+        Scanner input = new Scanner(System.in);
+
+        System.out.println("Enter a palindrome string to reverse it and verify: ");
+
+        beforerev = input.nextLine();
+        for (int i = beforerev.length() - 1; i >= 0; i--) {
+            afterrev = afterrev + beforerev.charAt(i);
+        }
+        if (afterrev.equals(beforerev)) {
+
+            beforerev = input.nextLine();
+
+            StringBuilder afterrev = new StringBuilder();
+
+            for (int i = beforerev.length() - 1; i >= 0; i--) {
+                afterrev.append(beforerev.charAt(i));
+            }
+
+            if (afterrev.toString().equals(beforerev)) {
+
+                System.out.println("Palindrome verified");
+                System.out.println("Before: " + beforerev);
+                System.out.println("After reverse: " + afterrev);
+            } else {
+                System.out.println("Palindrome not verified, before cannot be equal to after");
+            }
+        }
     }
 }
-
-public class PalindromeCheckerApp3 {
+public class PalindromeCheckerApp {
     public static void main(String[] args) {
-        Uc1 ob1 = new Uc1();
+        Uc3 ob1 = new Uc3();
     }
 }
