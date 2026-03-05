@@ -1,33 +1,32 @@
 import java.util.Scanner;
 
-class Uc4 {
-    String name2;
-    public void arraycheck(){
-        Scanner input=new Scanner(System.in);
-        System.out.println("Enter the string you want to check with array: ");
-        name2=input.nextLine();
-        char[] arr=name2.toCharArray();
+class Uc5 {
+    String name;
+    public void stack() {
+        Scanner input = new Scanner(System.in);
+        System.out.println("Enter the string to check using Stack: ");
+        name = input.nextLine();
+        Stack<Character> stk=new Stack<>();
+        for(int i=0;i<name.length();i++){
+            stk.push(name.charAt(i)); //pushes madam from 0 to 4 into stack
+        }
         boolean palin=true;
-        int start=0;
-        int end=arr.length-1;
-        while(start<end){
-            if(arr[start]!=arr[end]){
+        for(int i=0;i<name.length()/2;i++){
+            if(name.charAt(i)!=stk.pop()){ //0th index 'm' is compared with stack pops last index(4th) 'm'
                 palin=false;
                 break;
             }
-            start++;
-            end--;
         }
         if(palin){
-            System.out.println("Palindrome verified: " +name2);
+            System.out.println("Palindrome verified: " +name);
         }
         else{
-            System.out.println("Not a Palindrome: " +name2);
+            System.out.println("Not a Palindrome: " +name);
         }
     }
 }
 public class PalindromeCheckerApp3 {
     public static void main(String[] args) {
-        Uc4 ob1 = new Uc4();
+        Uc5 ob1 = new Uc5();
     }
 }
