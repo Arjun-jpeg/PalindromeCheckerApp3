@@ -1,42 +1,33 @@
 import java.util.Scanner;
 
-class Uc3 {
-    String beforerev;
-
-
-    public void reverse() {
-
-        Scanner input = new Scanner(System.in);
-
-        System.out.println("Enter a palindrome string to reverse it and verify: ");
-
-        beforerev = input.nextLine();
-        for (int i = beforerev.length() - 1; i >= 0; i--) {
-            afterrev = afterrev + beforerev.charAt(i);
+class Uc4 {
+    String name2;
+    public void arraycheck(){
+        Scanner input=new Scanner(System.in);
+        System.out.println("Enter the string you want to check with array: ");
+        name2=input.nextLine();
+        char[] arr=name2.toCharArray();
+        boolean palin=true;
+        int start=0;
+        int end=arr.length-1;
+        while(start<end){
+            if(arr[start]!=arr[end]){
+                palin=false;
+                break;
+            }
+            start++;
+            end--;
         }
-        if (afterrev.equals(beforerev)) {
-
-            beforerev = input.nextLine();
-
-            StringBuilder afterrev = new StringBuilder();
-
-            for (int i = beforerev.length() - 1; i >= 0; i--) {
-                afterrev.append(beforerev.charAt(i));
-            }
-
-            if (afterrev.toString().equals(beforerev)) {
-
-                System.out.println("Palindrome verified");
-                System.out.println("Before: " + beforerev);
-                System.out.println("After reverse: " + afterrev);
-            } else {
-                System.out.println("Palindrome not verified, before cannot be equal to after");
-            }
+        if(palin){
+            System.out.println("Palindrome verified: " +name2);
+        }
+        else{
+            System.out.println("Not a Palindrome: " +name2);
         }
     }
 }
-public class PalindromeCheckerApp {
+public class PalindromeCheckerApp3 {
     public static void main(String[] args) {
-        Uc3 ob1 = new Uc3();
+        Uc4 ob1 = new Uc4();
     }
 }
